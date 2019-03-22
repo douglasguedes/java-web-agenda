@@ -7,8 +7,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.jasper.runtime.ProtectedFunctionMapper;
+
+import com.agenda.dao.PessoaDAO;
 import com.agenda.model.Pessoa;
 import com.agenda.service.CadastraUsuarioService;
+
 
 public class CadastraUsuarioServlet extends HttpServlet {
 	
@@ -24,7 +28,9 @@ public class CadastraUsuarioServlet extends HttpServlet {
 		
 		CadastraUsuarioService service = new CadastraUsuarioService();
 		service.cadastro(pessoa);
-		
-		
+
+		PessoaDAO dao = new PessoaDAO();
+			
+	
 	}
 }
